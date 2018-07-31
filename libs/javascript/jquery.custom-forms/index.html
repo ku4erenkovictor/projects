@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Custom Forms</title>
+	<link rel="stylesheet" type="text/css" href="css/all.css" />
+	<script type="text/javascript" src="../jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/customScroll.js"></script>
+	<script type="text/javascript" src="js/jquery.form.js"></script>
+</head>
+<body>
+	<div id="main">
+		<h1>JetCoders Custom Form</h1>
+		<p>Для подключения кастомных форм, у вас на странице обязательно должен быть подключен jQuery последней версии и в файл jquery.main.js нужно добавть 
+		запуск кастомных форм и сам плагин. Способы запуска и работа с кастомными формами описана далее в этом документе.</p>
+		<h2>Виды запуска плагина</h2>
+		<p>Запуск плагина для элементов <strong>select.customSelect</strong>, <strong>input.customRadio</strong>, <strong>input.customCheckbox</strong> :</p>
+		<code>
+			jQuery('form').customForm();
+		</code>
+		<p>в данном случае плагин сначала находит все елементы "form" и уже после ищет внутри этих 
+		элементов <strong>select.customSelect</strong>, <strong>input.customRadio</strong>, <strong>input.customCheckbox</strong></p>
+		<code>
+			jQuery.customForm();
+		</code>
+		<p>в таком варианте плагин ищет во всем документе элементы <strong>select.customSelect</strong>, <strong>input.customRadio</strong>, <strong>input.customCheckbox</strong></p>
+		<h3>Пример:</h3>
+		<p><strong>Важно!</strong> Ширина кастомного селекта зависит от ширины обычного селекта (не в коем случае не задаем ширину на кастомный селект или выпадающий список в CSS)</p>
+		<p>В кастомном селекте реализован разворот выпадающего меню в верх, в случае если не хватает высоты проекта. При этом добавляется класс "position-top" как на кастомный селект
+		так и на выпадающее меню</p>
+		<form action="#">
+			<fieldset class="form">
+				<p>Обычный набор кастомный радиобокс :</p>
+				<div class="row">
+					<input type="radio" class="customRadio" name="radio01" id="rad02" />
+					<label for="rad02">Radio 1</label>
+					<label><span><input type="radio" checked="checked" class="customRadio" name="radio01" /></span> Radio 2</label>
+					<label><input type="radio" class="customRadio" name="radio01" /> Radio 3</label>
+				</div>
+				<p>Кастомный радиобокс и disabled="disabled" :</p>
+				<div class="row">
+					<input type="radio" disabled="disabled" class="customRadio" name="radio02" id="rad01" />
+					<label for="rad01">Radio 1</label>
+					<label><span><input disabled="disabled" type="radio" checked="checked" class="customRadio" name="radio02" /></span> Radio 2</label>
+					<label><input disabled="disabled" type="radio" class="customRadio" name="radio02" /> Radio 3</label>
+				</div>
+				<p>Обычный набор кастомный чекбокс :</p>
+				<div class="row">
+					<input type="checkbox" checked="checked" class="customCheckbox" id="chek01" />
+					<label for="chek01">Checkbox 1</label>
+					<label><span><input type="checkbox" class="customCheckbox" /></span> Checkbox 2</label>
+					<label><input type="checkbox" checked="checked" class="customCheckbox" /> Checkbox 3</label>
+				</div>
+				<p>Кастомный чекбокс и disabled="disabled" :</p>
+				<div class="row">
+					<input type="checkbox" checked="checked" disabled="disabled" class="customCheckbox" id="chek02" />
+					<label for="chek02">Checkbox 1</label>
+					<label><span><input type="checkbox" disabled="disabled" class="customCheckbox" /></span> Checkbox 2</label>
+					<label><input type="checkbox" checked="checked" disabled="disabled" class="customCheckbox" /> Checkbox 3</label>
+				</div>
+				<div class="row">
+					<p>Кастомный селект и selected="selected" для option:</p>
+					<select class="customSelect">
+						<option value="true">row 1</option>
+						<option value="false">row 2</option>
+					</select>
+				</div>
+				<div class="row">
+					<p>Кастомный селект и placeholder (в селект добавляем атрибут data-placeholder="Choise..." при этом когда показан placeholder на 
+					кастомный селект автоматически добавляется класс "placeholder"):</p>
+					<select class="customSelect" data-placeholder="Choise...">
+						<option class="red" value="1">row 1</option>
+						<option class="blue" value="2">row 2</option>
+						<option class="green">row 3</option>
+						<option value="4">row 4</option>
+					</select>
+				</div>
+				<div class="row">
+					<p>Кастомный селект и disabled="disabled" :</p>
+					<select disabled="disabled" class="customSelect">
+						<option value="1">row 1</option>
+						<option value="2">row 2</option>
+						<option selected="selected">row 3</option>
+						<option value="4">row 4</option>
+					</select>
+				</div>
+				<div class="row resize">
+					<p>Кастомный селект и disabled="disabled" для option который нельзя выбрать :</p>
+					<select class="customSelect flexible">
+						<option value="1">row 1</option>
+						<option value="2">row 2</option>
+						<option selected="selected">row 3</option>
+						<option value="4">row 4</option>
+						<option disabled="disabled" value="11">row 11</option>
+						<option value="21">row 21</option>
+						<option>row 31</option>
+						<option value="41">row 41</option>
+					</select>
+				</div>
+				<div class="row resize">
+					<p>Кастомный селект c нативным списком для мобильных устройств: <code> nativeDrop: true </code></p>
+					<p>CSS в таком случае:
+						<pre>.wrap{ /* родитель кастомного селекта */
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}</pre>
+<pre>.wrap .customSelect.outtaHere.mobile{
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+	bottom: 0;
+	opacity: 0;
+}</pre>
+					</p>
+
+					<div class="wrap">
+						<select class="customSelect4 flexible">
+							<option value="1">row 1</option>
+							<option value="2">row 2</option>
+							<option selected="selected">row 3</option>
+							<option value="4">row 4</option>
+							<option disabled="disabled" value="11">row 11</option>
+							<option value="21">row 21</option>
+							<option>row 31</option>
+							<option value="41">row 41</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+		<h2>Опции</h2>
+		<p>В плагине есть опции которые запускаются поумолчанию (т.е. если вы запустили плагин как указано выше, то эти упции тоже запускаются) :</p>
+		<code>
+			jQuery('form').customForm();
+		</code>
+		<p>равносильно :</p>
+		<pre>
+jQuery('form').customForm({
+	select: {							// опция отвечает за структуру кастомного селекта
+		elements: 'select.customSelect',
+		structure: '&lt;div class="selectArea">&lt;a href="#" class="selectButton">&lt;span class="center">&lt;/span>'+
+				'&lt;span class="right">&nbsp;&lt;/span>&lt;/a>&lt;div class="disabled">&lt;/div>&lt;/div>',
+		text: '.center',
+		btn: '.selectButton',
+		optStructure: '&lt;div class="selectOptions">&lt;ul>&lt;/ul>&lt;/div>',
+		topClass: 'position-top',
+		maxHeight: false,					// в этой опции можно указать максимальную высоту выпадающего меню
+		optList: 'ul'
+	},
+	radio: {							// опция отвечает за структуру кастомного радиобокса
+		elements: 'input.customRadio',
+		structure: '&lt;div>&lt;/div>',
+		defaultArea: 'radioArea',
+		checked: 'radioAreaChecked'
+	},
+	checkbox: {							// опция отвечает за структуру кастомного чекбокса
+		elements: 'input.customCheckbox',
+		structure: '&lt;div>&lt;/div>',
+		defaultArea: 'checkboxArea',
+		checked: 'checkboxAreaChecked'
+	},
+	disabled: 'disabled',						// клас для disabled="disabled"
+	hoverClass: 'hover'						// клас для включенного селекта
+});</pre>
+		<p>Все эти опции можно менять как по отдельности так и все сразу (при этом соблюдая структуру вложенности):</p>
+		
+		<pre>
+jQuery('form').customForm({			// в данном случае кастомные формы запустятся для select.customSelectOther, 
+	select: {				// input.customRadioOther и input.customCheckboxOther
+		elements: 'select.customSelectOther'
+	},
+	radio: {
+		elements: 'input.customRadioOther'
+	},
+	checkbox: {
+		elements: 'input.customCheckboxOther'
+	}
+});</pre>
+		<h2>Методы</h2>
+		<h3>"destroy"</h3>
+		<p>Метод "destroy" приминяется для отключения кастомных форм (так же удаляется структура и все события). Ниже написан пример который отключает кастомные формы для все элементов 
+		внутри "form" :</p>
+		<code>
+			jQuery('form').customForm("destroy");
+		</code>
+		<p>Следующий пример отключает кастомный селект с классом .customSelect2 :</p>
+		<code>
+			jQuery('select.customSelect2').customForm("destroy");
+		</code>
+		<h3>Пример</h3>
+		<form action="#">
+			<fieldset class="form">
+				<div class="row">
+					<input type="radio" class="customRadio" name="radio3" id="rad03" />
+					<label for="rad03">Radio 1</label>
+					<label><span><input type="radio" checked="checked" class="customRadio" name="radio3" /></span> Radio 2</label>
+					<label><input type="radio" class="customRadio" name="radio3" /> Radio 3</label>
+				</div>
+				<div class="row">
+					<input type="checkbox" checked="checked" class="customCheckbox" id="chek03" />
+					<label for="chek03">Checkbox 1</label>
+					<label><span><input type="checkbox" class="customCheckbox" /></span> Checkbox 2</label>
+					<label><input type="checkbox" checked="checked" class="customCheckbox" /> Checkbox 3</label>
+				</div>
+				<div class="row">
+					<select class="customSelect">
+						<option value="1">row 1</option>
+						<option value="2">row 2</option>
+						<option selected="selected">row 3</option>
+						<option value="4">row 4</option>
+					</select>
+				</div>
+				<div class="row resize">
+					<select class="customSelect2 flexible">
+						<option>a 1</option>
+						<option>b 1</option>
+						<option>c 1</option>
+						<option value="1">row 1</option>
+						<option value="2">row 2</option>
+						<option selected="selected">row 3</option>
+						<option value="4">row 4</option>
+						<option value="11">row 11</option>
+						<option value="21">row 21</option>
+						<option>row 31</option>
+						<option value="41">row 41</option>
+						<option>s</option>
+						<option>s 2</option>
+						<option>s 3</option>
+					</select>
+				</div>
+				<button type="reset">Сбросить форму</button>
+				<button class="destroy" type="button">destroy customForm</button>
+				<button class="create" type="button">create customForm</button>
+				<button class="destroy-select" type="button">destroy customSelect</button>
+				<button class="create-select" type="button">create customSelect</button>
+			</fieldset>
+		</form>
+		<h3>"refresh"</h3>
+		<p>Метод "refresh" приминяется для перезапуска кастомных форм. Ниже написан пример который перезапускает кастомные формы для все элементов 
+		внутри "form" :</p>
+		<code>
+			jQuery('form').customForm("refresh");
+		</code>
+		<p>Следующий пример перезапускает кастомный селект с классом .customSelect2 :</p>
+		<code>
+			jQuery('select.customSelect2').customForm("refresh");
+		</code>
+		<h3>Пример</h3>
+		<p>Допустим у нас есть select которому нужно добавть в конец новый елемент option. Для этого нам достаточно добавить этот елемент и перезапустить наш селект:</p>
+		<form action="#">
+			<fieldset class="form">
+				<div class="row">
+					<select class="customSelect">
+						<option value="1">row 1</option>
+						<option value="2">row 2</option>
+						<option selected="selected">row 3</option>
+						<option value="4">row 4</option>
+					</select>
+				</div>
+				<button class="add-option" type="button">Add new "option"</button>
+			</fieldset>
+		</form>
+		<h2>Подключение кастомного скрола для кастомных форм</h2>
+		<p>Подключаем к странице js customScroll и запускаем после создания кастомного селекта:</p>
+		<pre>
+jQuery.customForm({
+	select:{
+		elements: 'select.customSelect3',
+		optStructure: '&lt;div class="selectOptions">&lt;ul class="custom-scroll">&lt;/ul>&lt;/div>',	// указываем для &lt;ul> класс "custom-scroll"
+		maxHeight: 100								// не забываем указывать высоту данного кастомного скролла
+	}
+});
+
+$('.custom-scroll').customScrollV();</pre>
+		<h3>Пример</h3>
+		<form action="#">
+			<fieldset class="form">
+				<div class="row resize">
+					<select class="customSelect3 flexible">
+						<option value="1">row 1</option>
+						<option value="2">row 2</option>
+						<option selected="selected">row 3</option>
+						<option value="4">row 4</option>
+						<option>row 5</option>
+						<option>row 6</option>
+						<option>row 7</option>
+						<option>row 8</option>
+						<option>row 9</option>
+						<option>row 10</option>
+						<option>row 11</option>
+						<option>row 12</option>
+						<option>row 13</option>
+						<option>row 14</option>
+						<option>row 15</option>
+						<option>row 16</option>
+						<option>row 17</option>
+						<option>row 18</option>
+						<option>row 19</option>
+						<option>row 20</option>
+					</select>
+				</div>
+			</fieldset>
+		</form>
+		<p>В такой ситуации при каждом методе "refresh" нужно перезапускать кастомный скролл.</p>
+	</div>
+</body>
+</html>

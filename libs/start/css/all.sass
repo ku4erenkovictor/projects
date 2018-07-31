@@ -1,0 +1,182 @@
+html,
+body
+  height: 100%
+  margin: 0
+body
+  margin: 0
+  color: #000
+  min-width:px
+  font: px georgia, serif
+  font: px "times new roman", times, serif
+  font: px arial, helvetica, sans-serif
+  font: px tahoma, geneva, sans-serif
+  font: px "trebuchet ms", helvetica, sans-serif
+  font: px verdana, geneva, sans-serif
+  font: px "ms serif", "new york", serif
+  font: px "arial black", gadget, sans-serif
+  font: px "lucida sans unicode", "lucida grande", sans-serif
+  font: px "century gothic", arial, helvetica, sans-serif
+  -webkit-text-size-adjust: 100%
+/* General reset */
+form,
+fieldset
+  margin: 0
+  padding: 0
+  border-style: none
+img
+  border-style: none
+  vertical-align: top
+ul
+  li
+    vertical-align: top
+input,
+select,
+textarea
+  vertical-align: middle
+  font: 12px arial, helvetica, sans-serif
+  -webkit-appearance: none /*для нормального отображения инпутов в Safari*/
+a
+  color: #f00
+  text-decoration: underline
+  &:hover
+    text-decoration: none
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section
+  display: block
+figure
+  margin: 0
+
+button
+  &::-moz-focus-inner
+  padding: 0
+  border: 0
+a
+  &:focus,&:hover
+    outline: none
+    outline: 0
+/* wrapper */
+#wrapper
+  overflow: hidden
+  width:px
+  min-height: 100%
+.w1
+  padding-bottom: 50px
+/* header */
+#header
+  overflow: hidden
+  width:px
+#header .logo
+  float: left
+  overflow: hidden
+  text-indent: -9999px
+  margin: 0
+#header
+  .logo
+    a 
+#header
+  .logo
+    span
+    width:px
+    height:px
+    background: url(../images/logo.gif) no-repeat 0 0
+    display: block
+/* main */
+#main
+  overflow:hidden
+  width: 100%
+/* sidebar */
+#sidebar
+  overflow: hidden
+  float: left
+  width:px
+  padding: 0
+/* content */
+#content
+  overflow: hidden
+  width:px
+  float: right
+  padding: 0
+/* footer */
+#footer
+  overflow: hidden
+  width: 100%
+  padding: 0
+  position: relative
+  height: 50px
+  margin-top: -50px
+ol
+  margin: 0 0 20px -16px
+    padding: 0
+    overflow: hidden
+    list-style: none
+    counter-reset: item
+    font-size: 15px
+    line-height: 24px
+ol
+  li
+    &:before
+      content: counters(item, ".", decimal) ""
+        counter-increment: item
+        float: left
+        padding: 0 4px 0 0
+        color:#0c8ad5
+        text-align: right
+ 
+ol
+  li
+      padding: 0 0 15px 16px
+      position: relative
+/* placeholder input*/
+input:-moz-placeholder
+  color:#999
+  opacity: 1
+input::-moz-placeholder
+  color:#999
+  opacity: 1
+input::-webkit-input-placeholder
+  color:#999
+input:-ms-input-placeholder
+  color: #999
+/* input:focus placeholder */
+input:focus:-moz-placeholder
+  color:#999
+  opacity: 1
+input:focus::-moz-placeholder
+  color:#999
+  opacity: 1
+input:focus::-webkit-input-placeholder
+  color:#999
+input:focus:-ms-input-placeholder
+  color: #999
+/* placeholder  textarea*/
+textarea:-moz-placeholder 
+  color:#999
+  opacity: 1
+textarea::-moz-placeholder
+  color:#999
+  opacity: 1
+textarea::-webkit-input-placeholder
+  color:#999
+textarea:-ms-input-placeholder
+  color: #999
+/*  textarea:focus placeholder */
+textarea:focus:-moz-placeholder
+  color:#999
+  opacity: 1
+textarea:focus::-moz-placeholder
+  color:#999
+  opacity: 1
+textarea:focus::-webkit-input-placeholder
+  color:#999
+textarea:focus:-ms-input-placeholder
+  color: #999

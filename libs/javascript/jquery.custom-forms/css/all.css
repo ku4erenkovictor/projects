@@ -1,0 +1,225 @@
+body{
+	margin: 0;
+	font: 12px Arial, Helvetica, sans-serif;
+	color:#202020;
+}
+a{
+	color:#aa1d1d;
+	text-decoration: none;
+}
+a:hover{ text-decoration:underline; }
+img{	border-style: none;}
+form, fieldset{
+	padding:0;
+	margin:0;
+	border:0;
+}
+#main {
+	margin: 0 auto;
+	width: 70%;
+	min-width:1000px;
+	padding: 20px 0 0;
+}
+.form .row{
+	width:100%;
+	position:relative;
+	margin:0 0 20px;
+}
+.form .row::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.form .row input{
+	float:left;
+	margin:0 0 0 20px;
+	height:16px;
+	width:16px;
+}
+.form .row label{
+	float:left;
+	line-height:16px;
+}
+.form .row select{
+	float:left;
+	width:100px;
+}
+.outtaHere{
+	position:absolute;
+	left:-9999px;
+}
+.customRadio{
+	width:10px;
+	height:10px;
+	border: 1px solid #ccc;
+	float:left;
+	margin:2px 5px 2px 22px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+.customRadio.disabled,
+.customCheckbox.disabledChecked{
+	opacity:0.5;
+}
+.customRadio.radioAreaChecked,
+.customRadio.disabledChecked{
+	background:#f00;
+	border: 1px solid #666;
+}
+.customRadio.radioAreaChecked.focus{
+	-webkit-box-shadow: 0 0 3px #00f;
+	-moz-box-shadow: 0 0 3px #00f;
+	box-shadow: 0 0 3px #00f;
+}
+p{
+	margin: 0 0 20px;
+}
+.selectArea .disabled{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background:#fff;
+	opacity:0.3;
+}
+.customCheckbox{
+	width:13px;
+	height:13px;
+	border: 1px solid #ccc;
+	float:left;
+	margin:0 3px 0 20px;
+}
+.customCheckbox.checkboxAreaChecked,
+.customCheckbox.disabledChecked{
+	background:#0f0;
+	border: 1px solid #666;
+}
+.customCheckbox.checkboxAreaChecked.focus,
+.customCheckbox.focus{
+	-webkit-box-shadow: 0 0 3px #00f;
+	-moz-box-shadow: 0 0 3px #00f;
+	box-shadow: 0 0 3px #00f;
+}
+.selectArea{
+	line-height:20px;
+	float:left;
+	overflow:hidden;
+	position:relative;
+}
+.selectArea .selectButton{
+	display:block;
+	border: 1px solid #ccc;
+	position:relative;
+	text-decoration:none;
+}
+.selectArea.focus{
+	-webkit-box-shadow: 0 0 3px #00f;
+	-moz-box-shadow: 0 0 3px #00f;
+	box-shadow: 0 0 3px #00f;
+}
+.selectArea .selectButton span:first-child{
+	display:block;
+	margin:0 20px 0 0;
+	padding:0 0 0 5px;
+	background:#efe;
+}
+.selectArea .selectButton .right{
+	position:absolute;
+	right:0px;
+	top:0px;
+	background:#9f9;
+	width:20px;
+	height:20px;
+}
+.selectOptions{
+	background:#efe;
+	margin:-1px 0 0;
+}
+.selectOptions ul{
+	border: 1px solid #ccc;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.selectOptions ul li{
+	line-height:20px;
+}
+.selectOptions ul li a,
+.selectOptions ul li span{
+	padding:0 5px;
+	display:block;
+	text-decoration:none;
+}
+.selectOptions ul li span{
+	background:#eee;
+}
+.selectOptions ul li a:hover,
+.selectOptions ul li.selected a{
+	background:#9f9;
+}
+.form .resize{
+	width:50%;
+	overflow:visible;
+}
+.form .resize:after{
+	content:"";
+	clear:both;
+	display:block;
+}
+.form .row select.flexible{
+	width:100%;
+}
+code,
+pre{
+	display:block;
+	padding:10px;
+	border: 1px solid #666;
+	margin:0 0 20px;
+	background:#f9f9f9;
+}
+form{
+	display:block;
+	padding:10px;
+	border: 1px solid #666;
+	margin:0 0 20px;
+	background:#f9f9f9;
+}
+.scroll-content{
+	width:100%;
+}
+.vscroll-bar{
+	background:#EdFFEd;
+	border-left: 1px solid #ccc;
+}
+.vscroll-bar .scroll-up,
+.vscroll-bar .scroll-down{
+	background:#f99;
+}
+.vscroll-bar .scroll-slider{
+	background:#9f9;
+}
+.red a,
+span.red{color: red !important;}
+.blue a,
+span.blue{color: blue !important;}
+.green a,
+span.green{color: green !important;}
+
+.wrap{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.wrap .customSelect4.mobile.outtaHere{
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+	bottom: 0;
+	opacity: 0;
+}

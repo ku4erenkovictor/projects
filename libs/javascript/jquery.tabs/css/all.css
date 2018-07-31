@@ -1,0 +1,112 @@
+body{
+	margin: 0;
+	font: 12px Arial, Helvetica, sans-serif;
+	color:#202020;
+}
+a{
+	color:#aa1d1d;
+	text-decoration: none;
+}
+a:hover{ text-decoration:underline; }
+img{	border-style: none;}
+form, fieldset{
+	padding:0;
+	margin:0;
+	border:0;
+}
+.main {
+	margin: 0 auto;
+	width: 70%;
+	min-width:1200px;
+	padding: 20px 0 0;
+}
+p{
+	margin: 0 0 20px;
+}
+pre{
+	border-radius: 3px;
+	background-color: rgba(0,0,0,0.04);
+	border: 1px solid;
+	border-color: rgba(0,0,0,0.08);
+	margin:0 0 20px;
+	padding: 2px;
+}
+table pre{
+	margin:0;
+}
+code{
+	border-radius: 3px;
+	background-color: rgba(0,0,0,0.04);
+	border: 1px solid;
+	border-color: rgba(0,0,0,0.08);
+	padding: 0 2px;
+}
+
+table{
+	width:100%;
+	border-collapse:collapse;
+	margin:0 0 20px;
+}
+table th,
+table td{
+	border: 1px solid #000;
+	padding:5px;
+	vertical-align:top;
+}
+.wrap{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	margin: 0 0 20px;
+}
+.wrap .list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+}
+.wrap .list li,
+.wrap .btn{
+	float: left;
+	margin: 0 1px 0 0;
+	background: #999;
+	color: #fff;
+	padding: 0 20px;
+	line-height: 30px;
+	cursor: pointer;
+}
+.wrap .list li.active{
+	background: #fb0;
+	color: #000;
+	cursor: default;
+}
+.wrap [data-tab].disabled{
+	opacity: 0.5;
+	cursor: default;
+}
+.wrap [data-tab].disabled:hover{
+	text-decoration: none;
+}
+.wrap .tab{
+	background: #eee;
+	overflow: hidden;
+	width: 100%;
+	padding: 10px 20px 15px;
+}
+.wrap .tab.hidden{
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+}
+.wrap .tab.visible{
+	position: static;
+}
+.wrap .tab h3{
+	margin: 0 0 10px;
+}
+.wrap .hold-btn{
+	width: 100%;
+	overflow: hidden;
+	margin: 0 0 10px;
+}

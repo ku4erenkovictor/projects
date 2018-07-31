@@ -1,0 +1,85 @@
+body{
+	margin: 0;
+	font: 12px Arial, Helvetica, sans-serif;
+	color:#202020;
+}
+a{
+	color:#aa1d1d;
+	text-decoration: none;
+}
+a:hover{ text-decoration:underline; }
+img{	border-style: none;}
+form, fieldset{
+	padding:0;
+	margin:0;
+	border:0;
+}
+#main {
+	margin: 0 auto;
+	width: 900px;
+	padding: 20px 0 0;
+}
+.form .file{
+	width:219px;
+	position:relative;
+	margin: 0 0 20px;
+	overflow: hidden;
+	z-index: 10;
+	height: 49px;
+}
+.form .file-3{height: 63px;}
+.form .file-input-area {
+	cursor: pointer;
+    font-size: 400px;
+    height: 49px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+}
+.form .file .text {
+	position:absolute;
+	z-index:2;
+	top:0;
+	left:0;
+	width:119px;
+	border:1px solid #e2e2de;
+	padding:16px 9px 15px;
+	margin: 0;
+	color:#696969;
+	font:12px Arial, Helvetica, sans-serif;
+}
+.form .file-2 .text { left: 80px; }
+.form .file-3 .text { width: 198px; }
+.form .button {
+	float:right;
+	background:#ccc;
+	width:73px;
+	height:31px;
+	padding:15px 0 0;
+	overflow:hidden;
+	color:#7d7d7b;
+	font-weight:bold;
+	text-align:center;
+	border: 1px solid #aaa;
+}
+.form .file-2 .button { float: left; }
+.form .file-3 .button {
+	margin: 34px 0 0;
+	float: left;
+}
+.form .hover .button {
+	background:#bbb;
+	color: #fff;
+}
+.form input{
+	cursor:pointer;
+}
+
+.file-input-area {
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+}

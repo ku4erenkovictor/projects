@@ -1,0 +1,321 @@
+
+@font-face {
+    font-family: 'yantramanavthin';
+    src: url('../fonts/yantramanav-thin-webfont.eot');
+    src: url('../fonts/yantramanav-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/yantramanav-thin-webfont.woff2') format('woff2'),
+         url('../fonts/yantramanav-thin-webfont.woff') format('woff'),
+         url('../fonts/yantramanav-thin-webfont.ttf') format('truetype'),
+         url('../fonts/yantramanav-thin-webfont.svg#yantramanavthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'yantramanavlight';
+    src: url('../yantramanav-light-webfont.eot');
+    src: url('../yantramanav-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../yantramanav-light-webfont.woff2') format('woff2'),
+         url('../yantramanav-light-webfont.woff') format('woff'),
+         url('../yantramanav-light-webfont.ttf') format('truetype'),
+         url('../yantramanav-light-webfont.svg#yantramanavlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'yantramanav_regularregular';
+    src: url('../yantramanav-regular-webfont.eot');
+    src: url('../yantramanav-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../yantramanav-regular-webfont.woff2') format('woff2'),
+         url('../yantramanav-regular-webfont.woff') format('woff'),
+         url('../yantramanav-regular-webfont.ttf') format('truetype'),
+         url('../yantramanav-regular-webfont.svg#yantramanav_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nunitoregular';
+    src: url('../fonts/nunito-regular-webfont.eot');
+    src: url('../fonts/nunito-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/nunito-regular-webfont.woff2') format('woff2'),
+         url('../fonts/nunito-regular-webfont.woff') format('woff'),
+         url('../fonts/nunito-regular-webfont.ttf') format('truetype'),
+         url('../fonts/nunito-regular-webfont.svg#nunitoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'nunitolight';
+    src: url('../fonts/nunito-light-webfont.eot');
+    src: url('../fonts/nunito-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/nunito-light-webfont.woff2') format('woff2'),
+         url('../fonts/nunito-light-webfont.woff') format('woff'),
+         url('../fonts/nunito-light-webfont.ttf') format('truetype'),
+         url('../fonts/nunito-light-webfont.svg#nunitolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
+html,body {
+	margin: 0;
+}
+body {
+	margin: 0;
+	color: #000;
+	min-width: 320px;
+	font: 15px/22px 'yantramanavthin', arial, helvetica, sans-serif;
+	-webkit-text-size-adjust: 100%; 
+}
+/* General reset */
+form, fieldset {
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+img {
+	border-style: none;
+	vertical-align:top;
+}
+ul li{vertical-align:top;}
+input, select, textarea {
+	vertical-align: middle;
+	font: 12px arial, helvetica, sans-serif;
+	-webkit-appearance: none; /*для нормального отображения инпутов в Safari*/
+}
+a {
+	color: #f00;
+	text-decoration: underline;
+}
+a:hover {text-decoration: none;}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {display:block;}
+figure{margin:0;}
+
+button::-moz-focus-inner {
+	padding:0;
+	border:0;
+}
+
+a:focus,
+a:hover {
+ outline: none;
+ outline: 0;
+}
+
+/* wrapper */
+#wrapper {
+	overflow:hidden;
+	position: relative;
+	width: 100%;
+}
+.w1 {padding-bottom: 50px;}
+/* header */
+#header {
+	overflow:hidden;
+	position: absolute;
+	width: 100%;
+	top: 30px;
+    left: 35px;
+	z-index: 1;
+}
+#header .logo {
+	overflow: hidden;
+	text-indent: -9999px;
+	margin:0;
+}
+#header .logo,
+#header .logo a{
+	display:block;
+	width: 142px;
+	height: 57px;
+}
+#header .logo a{
+	-webkit-transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -ms-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+#header .logo a:hover{
+	opacity: 0.8;
+}
+#header .logo a img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* main */
+#main {
+	overflow:hidden;
+	width:100%;
+}
+.block-intro{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	min-height: 800px;
+	background-size: cover;
+    background-position: center 0;
+}
+.block-intro:after{
+	content: "";
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.block-intro .wrap-intro{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.wrap-intro .holder-intro{
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+	color: #fff;
+	z-index: 1;
+}
+.holder-intro .box-intro{
+	text-align: center;
+	max-width: 680px;
+	padding: 0 20px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.box-intro h1{
+	font: 60px/60px 'nunitolight', arial, helvetica, sans-serif;
+	margin: 0 0 30px;
+}
+.box-intro .sub-title{
+	display: block;
+	font-family: 'yantramanavlight';
+	font-size: 20px;
+	line-height: 27px;
+	margin: 0 0 30px;
+	
+}
+.block-feature{
+	overflow: hidden;
+}
+.block-feature .feature-col,
+.block-feature .feature-img{
+	float: left;
+	width: 50%;
+}
+.block-feature .feature-col{
+	padding: 0 0;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.pages{
+	display: block;
+	background: green;
+	color: #000;
+	height: 50px;
+}
+
+
+
+
+
+
+
+/* footer */
+#footer {
+	overflow:hidden;
+	width:100%;
+	padding:0;
+	position:relative;
+	height: 50px;
+	margin-top: -50px;
+}
+ol {
+  margin:0 0 20px -16px;
+  padding:0;
+  overflow:hidden;
+  list-style:none;
+  counter-reset:item;
+  font-size:15px;
+  line-height:24px;
+}
+ol > li:before {
+  content: counters(item, ".", decimal) ""; 
+  counter-increment: item;
+  float:left;
+  padding:0 4px 0 0;
+  color:#0c8ad5;
+  text-align:right;
+ }
+ol li {
+  padding:0 0 15px 16px;
+  position:relative;
+}
+/* placeholder input*/
+input:-moz-placeholder {
+	color:#999;
+	opacity:1;
+}
+input::-moz-placeholder {
+	color:#999;
+	opacity:1;
+}
+input::-webkit-input-placeholder {color:#999;}
+input:-ms-input-placeholder {color: #999 ;}
+/* input:focus placeholder */
+input:focus:-moz-placeholder {
+	color:#999;
+	opacity:1;
+}
+input:focus::-moz-placeholder {
+	color:#999;
+	opacity:1;
+}
+input:focus::-webkit-input-placeholder {color:#999;}
+input:focus:-ms-input-placeholder {color: #999 ;}
+/* placeholder  textarea*/
+textarea:-moz-placeholder {
+	color:#999;
+	opacity:1;
+}
+textarea::-moz-placeholder {
+	color:#999;
+	opacity:1;
+}
+textarea::-webkit-input-placeholder {color:#999;}
+textarea:-ms-input-placeholder {color: #999 ;}
+/*  textarea:focus placeholder */
+textarea:focus:-moz-placeholder {
+	color:#999;
+	opacity:1;
+}
+textarea:focus::-moz-placeholder {
+	color:#999;
+	opacity:1;
+}
+textarea:focus::-webkit-input-placeholder {color:#999;}
+textarea:focus:-ms-input-placeholder {color: #999 ;}
+
+
+
+@media (max-width: 1024px) {
+	
+}

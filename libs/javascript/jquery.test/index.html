@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Simplebox</title>
+	<link rel="stylesheet" type="text/css" href="css/all.css" />
+	<script type="text/javascript" src="../jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.main.js"></script>
+</head>
+<body>
+	<div class="overlay"></div>
+	<a href="" class="overlay-link">overlay</a>
+	<div id="main">
+		<div class="box">
+			<a href="" class="link">link</a>
+			<div class="hidden">
+				<div class="text">
+					<h1>JetCoders Simplebox</h1>
+					<p>Для подключения модального окна, у вас на странице обязательно должен быть подключен jQuery последней версии и в файл jquery.main.js нужно добавть 
+					запуск simplebox и сам плагин. Способы запуска и работа с плагином simplebox описана далее в этом документе.</p>
+					<h2>Виды запуска плагина</h2>
+					<p>Для начала создадим модальное окно и положем его в конец &lt;body>:</p>
+					<h1>JetCoders Simplebox</h1>
+					<p>Для подключения модального окна, у вас на странице обязательно должен быть подключен jQuery последней версии и в файл jquery.main.js нужно добавть 
+					запуск simplebox и сам плагин. Способы запуска и работа с плагином simplebox описана далее в этом документе.</p>
+					<h2>Виды запуска плагина</h2>
+					<p>Для начала создадим модальное окно и положем его в конец &lt;body>:</p>
+				</div>
+			</div>
+		</div>
+		<h1>JetCoders Simplebox</h1>
+		<p>Для подключения модального окна, у вас на странице обязательно должен быть подключен jQuery последней версии и в файл jquery.main.js нужно добавть 
+		запуск simplebox и сам плагин. Способы запуска и работа с плагином simplebox описана далее в этом документе.</p>
+		<h2>Виды запуска плагина</h2>
+		<p>Для начала создадим модальное окно и положем его в конец &lt;body>:</p>
+		<pre>HTML:
+		
+&lt;div class="modal" id="modal01">
+	&lt;span class="close">close&lt;/span>
+	&lt;p>Текст&lt;/p>
+&lt;/div>
+
+CSS:
+
+.modal{
+	width:500px;
+	padding:30px 20px;
+	border: 1px solid #000;
+	position:absolute;
+	background:#fff;
+	left:-9999px;
+	top:-9999px;
+	z-index:1000;
+}
+		</pre>
+		<p>обязательно задаем id, т.к. javascript будет искать модальное окно по нашему id. Далее создаем в документе кнопку для запуска, у которой в 
+		<strong>href</strong> указываем наш id:</p>
+		<pre>&lt;a class="simplebox" href="#modal01">Open modal&lt;/a> 
+
+или
+
+&lt;button class="simplebox" type="button" data-href="#modal01">Open modal&lt;/button>
+		</pre>
+		<p>далее запускаем сам плагин:</p>
+		<pre>$('.simplebox').simplebox();
+
+или, если нужно открыть модальное окно без кнопки:
+
+$.simplebox('#modal01');
+		</pre>
+		<h3>Примеры</h3>
+		<ul>
+			<li><a class="simplebox" href="#modal01">Открыть <strong>Modal 01</strong> через &lt;a></a></li>
+			<li><button class="simplebox" type="button" data-href="#modal01">Открыть <strong>Modal 01</strong> через &lt;button></button></li>
+		</ul>
+		<h2>Опции</h2>
+		<p>В плагине есть опции которые запускаются поумолчанию (т.е. если вы запустили плагин как указано выше, то эти упции тоже запускаются) :</p>
+		<pre>$('.simplebox').simplebox();
+
+или
+
+$.simplebox('#modal01');
+		</pre>
+		<p>равносильно :</p>
+		<pre>$('.simplebox').simplebox({
+	duration: 300,
+	linkClose: '.close, .btn-close',
+	disableClass: 'disabled',
+	overlay: {
+		box: 'simplebox-overlay',
+		color: 'black',
+		closeClick: true,
+		opacity: 0.3
+	},
+	positionFrom: false
+});
+
+или
+
+$.simplebox('#modal01', {
+	duration: 300,
+	linkClose: '.close, .btn-close',
+	disableClass: 'disabled',
+	overlay: {
+		box: 'simplebox-overlay',
+		color: 'black',
+		closeClick: true,
+		opacity: 0.3
+	},
+	positionFrom: false
+});
+		</pre>
+		<p>Все эти опции можно менять как по отдельности так и все сразу (при этом соблюдая структуру вложенности):</p>
+		
+		<table>
+			<tr>
+				<th>Опция</th>
+				<th>Значение</th>
+				<th>Описание</th>
+			</tr>
+			<tr>
+				<td>duration</td>
+				<td>300</td>
+				<td>Время в мс для анимации</td>
+			</tr>
+			<tr>
+				<td>linkClose</td>
+				<td>'.close, .btn-close'</td>
+				<td>Элементы которые находятся внутри нашего модального окна, при нажатии на которые будет закрыто модальное окно</td>
+			</tr>
+			<tr>
+				<td>disableClass</td>
+				<td>'disabled'</td>
+				<td>Класс который при необходимости можно задать для &lt;a class="simplebox" href="#modal01">Open modal&lt;/a> что бы при клике не открывалось окно.</td>
+			</tr>
+			<tr>
+				<td>overlay</td>
+				<td>{object}</td>
+				<td>
+					Опции для overlay (если указать false - оверлей не будет создан)
+					<table>
+						<tr>
+							<td>box</td>
+							<td>'simplebox-overlay'</td>
+							<td>Класс для overlay</td>
+						</tr>
+						<tr>
+							<td>color</td>
+							<td>'black'</td>
+							<td>Цвет для overlay</td>
+						</tr>
+						<tr>
+							<td>closeClick</td>
+							<td>true</td>
+							<td>Закрытие по клику на overlay</td>
+						</tr>
+						<tr>
+							<td>opacity</td>
+							<td>0.3</td>
+							<td>Прозрачность для overlay</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>positionFrom</td>
+				<td>false</td>
+				<td>Позиционирование окна от определенного элемента (пример: '#block')</td>
+			</tr>
+		</table>
+		<h2>Методы</h2>
+		<h3>"$.simplebox.close()"</h3>
+		<p>Метод "$.simplebox.close()" глобальный и закрывает любой открытый simplebox:</p>
+		<pre>jQuery('a.close').click(function(){
+	$.simplebox.close();
+	return false;
+});
+		</pre>
+		<h3>Примеры</h3>
+		<ul>
+			<li><a class="simplebox" href="#modal01">Открыть <strong>Modal 01</strong> через &lt;a></a></li>
+			<li><a class="simplebox3 positionFrom" href="#modal01">Открыть <strong>Modal 01</strong> с опцией "positionFrom"</a></li>
+			<li><button class="simplebox" type="button" data-href="#modal01">Открыть <strong>Modal 01</strong> через &lt;button></button></li>
+			<li><a class="simplebox" href="#modal02">Открыть <strong>Modal 02</strong></a></li>
+		</ul>
+		<h2>События</h2>
+		
+		<table>
+			<tr>
+				<th>Событие</th>
+				<th>Описание</th>
+			</tr>
+			<tr>
+				<td>onOpen: function(obj){...}</td>
+				<td>Метод запускается перед открытием окна, в obj передается jQuery обьект окна.</td>
+			</tr>
+			<tr>
+				<td>afterOpen: function(obj){...}</td>
+				<td>Метод запускается после открытия окна, в obj передается jQuery обьект окна.</td>
+			</tr>
+			<tr>
+				<td>onClose: function(obj){...}</td>
+				<td>Метод запускается перед закрытием окна, в obj передается jQuery обьект окна.</td>
+			</tr>
+			<tr>
+				<td>afterClose: function(obj){...}</td>
+				<td>Метод запускается после закрытия окна, в obj передается jQuery обьект окна.</td>
+			</tr>
+		</table>
+		<p>Все события обьявляются при запуске плагина, как опции:</p>
+		<pre>$('.simplebox').simplebox({
+	onOpen: function(obj){console.log('onOpen', obj);},
+	afterOpen: function(obj){console.log('afterOpen', obj);},
+	onClose: function(obj){console.log('onClose', obj);},
+	afterClose: function(obj){console.log('afterClose', obj);}
+});
+		</pre>
+	</div>
+	
+	<div class="modal" id="modal01">
+		<h2>Modal 01</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel magna iaculis augue eleifend malesuada. Morbi 
+		luctus dui mollis, accumsan mauris ut, malesuada lectus. Donec finibus pulvinar rhoncus. Aenean porta nisl eu 
+		justo sodales pharetra. Suspendisse aliquet fringilla tortor, in fermentum mauris imperdiet nec. Aliquam et 
+		egestas massa, et tempor nulla. Sed sed dolor sed sapien commodo tincidunt quis nec orci. Sed semper felis ac 
+		velit scelerisque, quis lacinia tortor hendrerit. Sed eget dolor nunc.</p>
+		
+		<a class="simplebox" href="#modal02">Open <strong>Modal 02</strong></a>
+		<br /><br />
+		<a class="close2" href="#">Закрыть модальное окно, методом "<strong>$.simplebox.close()</strong>"</a>
+		<br /><br />
+		<p>Curabitur at enim quis lacus consectetur euismod. Donec porta posuere turpis eget posuere. Vestibulum iaculis 
+		mi sit amet magna condimentum, in aliquet dui dignissim. Cras in porttitor lectus. Sed id iaculis massa, auctor 
+		facilisis massa. Mauris volutpat hendrerit iaculis. Suspendisse fermentum lorem sit amet augue ornare, eu laoreet 
+		leo rutrum.</p>
+		<span class="close">Закрыть окно</span>
+	</div>
+	<div class="modal" id="modal02">
+		<h2>Modal 02</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel magna iaculis augue eleifend malesuada. Morbi 
+		luctus dui mollis, accumsan mauris ut, malesuada lectus. Donec finibus pulvinar rhoncus. Aenean porta nisl eu 
+		justo sodales pharetra.</p>
+		
+		<a class="simplebox" href="#modal01">Open <strong>Modal 01</strong></a>
+		<br /><br />
+		<p>Curabitur at enim quis lacus consectetur euismod. Donec porta posuere turpis eget posuere. Vestibulum iaculis 
+		mi sit amet magna condimentum, in aliquet dui dignissim. Cras in porttitor lectus. Sed id iaculis massa, auctor 
+		facilisis massa. Mauris volutpat hendrerit iaculis.</p>
+		<span class="close">Закрыть окно</span>
+	</div>
+</body>
+</html>

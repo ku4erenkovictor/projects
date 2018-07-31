@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Gallery</title>
+	<link rel="stylesheet" type="text/css" href="css/all.css" />
+	<script type="text/javascript" src="../jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.gallery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.main.js"></script>
+</head>
+<body>
+	<div class="main">
+		
+		<h1>JetCoders Gallery</h1>
+		<h3>Значения по умолчанию:</h3>
+
+		<table>
+			<tr>
+				<th>Option</th>
+				<th>Description</th>
+				<th>Data Type</th>
+				<th>Default</th>
+			</tr>
+			<tr>
+				<td><code>infinite</code></td>
+				<td>Включение бесконечной галлереи (только для слайд)</td>
+				<td>Boolean</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td><code>activeClass</code></td>
+				<td>Класс активного элемента</td>
+				<td>String</td>
+				<td>'active'</td>
+			</tr>
+			<tr>
+				<td><code>duration</code></td>
+				<td>Время смены елемента</td>
+				<td>Number</td>
+				<td>300</td>
+			</tr>
+			<tr>
+				<td><code>slideElement</code></td>
+				<td>Количество листаемых элементов</td>
+				<td>Number</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td><code>effect</code></td>
+				<td>Выбор между слайд и фейд галереями</td>
+				<td>Boolean, String</td>
+				<td>false (слайд), true (фейд), 'transparent' (фейд без фона)</td>
+			</tr>
+			<tr>
+				<td><code>elements</code></td>
+				<td>Указываем элементы галлереи</td>
+				<td>String</td>
+				<td>'ul:eq(0) > li' (По умолчанию первая ul)</td>
+			</tr>
+			<tr>
+				<td><code>switcher</code></td>
+				<td>Указываем свитчеры</td>
+				<td>String</td>
+				<td>'.switcher > li'</td>
+			</tr>
+			<tr>
+				<td><code>disableBtn</code></td>
+				<td>Класс для отключения prev и next</td>
+				<td>Boolean or String</td>
+				<td>false (отключено)</td>
+			</tr>
+			<tr>
+				<td><code>prevBtn</code></td>
+				<td>Указываем кнопку prev</td>
+				<td>String</td>
+				<td>'a.link-prev, a.btn-prev, .prev'</td>
+			</tr>
+			<tr>
+				<td><code>nextBtn</code></td>
+				<td>Указываем кнопку next</td>
+				<td>String</td>
+				<td>'a.link-next, a.btn-next, .next'</td>
+			</tr>
+			<tr>
+				<td><code>circle</code></td>
+				<td>Возможность возвращаться в начало(конец) галлереи</td>
+				<td>Boolean</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td><code>direction</code></td>
+				<td>Направление слайд галлереи (вертикальное или горизонтальное)</td>
+				<td>Boolean</td>
+				<td>false (горизонтальное)</td>
+			</tr>
+			<tr>
+				<td><code>event</code></td>
+				<td>Событие мышки ('click', 'mousedown', 'mouseup', 'mouseover')</td>
+				<td>String</td>
+				<td>'click'</td>
+			</tr>
+			<tr>
+				<td><code>autoHeight</code></td>
+				<td>Анимирование высоты галереи (только фейд)</td>
+				<td>Boolean</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td><code>flexible</code></td>
+				<td>Перестроение галлереи для адаптива (3 > 2 > 1)</td>
+				<td>Boolean</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td><code>oneSlide</code></td>
+				<td>Ризиновая галарея на один слайд (на всю ширину холдера)</td>
+				<td>Boolean</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td><code>autoDetect</code></td>
+				<td>Автоматическое определение слайд или фейд</td>
+				<td>Boolean</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td><code>touch</code></td>
+				<td>Обработка тач событий</td>
+				<td>Boolean</td>
+				<td>true (включена)</td>
+			</tr>
+			<tr>
+				<td><code>onChange</code></td>
+				<td>Метод срабатывает при смене елемента</td>
+				<td>Function</td>
+				<td>null</td>
+			</tr>
+		</table>
+		<h2>Слайд галереи:</h2>
+		<p>JS: <code>$('.slide1').gallery();</code></p>
+		<div class="slide slide1">
+			<div class="hold">
+				<ul>
+					<li><img src="images/img01.jpg" alt="" /></li>
+					<li><img src="images/img02.jpg" alt="" /></li>
+					<li><img src="images/img03.jpg" alt="" /></li>
+					<li><img src="images/img04.jpg" alt="" /></li>
+					<li><img src="images/img05.jpg" alt="" /></li>
+					<li><img src="images/img06.jpg" alt="" /></li>
+					<li><img src="images/img07.jpg" alt="" /></li>
+					<li><img src="images/img08.jpg" alt="" /></li>
+					<li><img src="images/img09.jpg" alt="" /></li>
+					<li><img src="images/img10.jpg" alt="" /></li>
+				</ul>
+			</div>
+			<span class="prev">&lArr;</span>
+			<span class="next">&rArr;</span>
+		</div>
+		<h3>Авторотация (7сек), смена слайдов 1сек и листаем по 2 элемента:</h3>
+		<pre>	$('.slide2').gallery({
+		autoRotation: 7000,
+		duration: 1000,
+		slideElement: 2
+	});</pre>
+		<div class="slide slide2">
+			<div class="hold">
+				<ul>
+					<li><img src="images/img01.jpg" alt="" /></li>
+					<li><img src="images/img02.jpg" alt="" /></li>
+					<li><img src="images/img03.jpg" alt="" /></li>
+					<li><img src="images/img04.jpg" alt="" /></li>
+					<li><img src="images/img05.jpg" alt="" /></li>
+					<li><img src="images/img06.jpg" alt="" /></li>
+					<li><img src="images/img07.jpg" alt="" /></li>
+					<li><img src="images/img08.jpg" alt="" /></li>
+					<li><img src="images/img09.jpg" alt="" /></li>
+					<li><img src="images/img10.jpg" alt="" /></li>
+				</ul>
+			</div>
+			<span class="prev">&lArr;</span>
+			<span class="next">&rArr;</span>
+		</div>
+		<h3>Свичеры + бесконечная:</h3>
+		<pre>	$('.slide3').gallery({
+		infinite: true,
+		switcher: "div.switcher > span"
+	});</pre>
+		<div class="slide slide3">
+			<div class="hold">
+				<ul>
+					<li><img src="images/img01.jpg" alt="" /></li>
+					<li><img src="images/img02.jpg" alt="" /></li>
+					<li><img src="images/img03.jpg" alt="" /></li>
+					<li><img src="images/img04.jpg" alt="" /></li>
+					<li><img src="images/img05.jpg" alt="" /></li>
+					<li><img src="images/img06.jpg" alt="" /></li>
+					<li><img src="images/img07.jpg" alt="" /></li>
+					<li><img src="images/img08.jpg" alt="" /></li>
+					<li><img src="images/img09.jpg" alt="" /></li>
+					<li><img src="images/img10.jpg" alt="" /></li>
+				</ul>
+			</div>
+			<div class="switcher">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<span class="prev">&lArr;</span>
+			<span class="next">&rArr;</span>
+		</div>
+		<h3>Свичеры + Слайд на всю ширину контейнера + Отключение кнопок:</h3>
+		<pre>	$('.slide4').gallery({
+		oneSlide: true,
+		circle: false,
+		disableBtn: 'disabled',
+		switcher: "div.switcher > span"
+	});</pre>
+	</div>
+	<div class="slide slide4">
+		<div class="hold">
+			<ul>
+				<li><img src="images/img01.jpg" alt="" /></li>
+				<li><img src="images/img02.jpg" alt="" /></li>
+				<li><img src="images/img03.jpg" alt="" /></li>
+				<li><img src="images/img04.jpg" alt="" /></li>
+				<li><img src="images/img05.jpg" alt="" /></li>
+				<li><img src="images/img06.jpg" alt="" /></li>
+				<li><img src="images/img07.jpg" alt="" /></li>
+				<li><img src="images/img08.jpg" alt="" /></li>
+				<li><img src="images/img09.jpg" alt="" /></li>
+				<li><img src="images/img10.jpg" alt="" /></li>
+			</ul>
+		</div>
+		<div class="switcher">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<span class="prev">&lArr;</span>
+		<span class="next">&rArr;</span>
+	</div>
+	<div class="main">
+		<h3>Flexible:</h3>
+		<p>При <code>flexible</code> нельзя задавать боковые <code>padding</code>, <code>margin</code> или <code>border</code> на теги <code>&lt;li></code>. Отступы делаем внутри <code>&lt;li></code></p>
+		<pre>	$('.slide5').gallery({
+		flexible: true
+	});</pre>
+	</div>
+	<div class="slide slide5">
+		<div class="hold">
+			<ul>
+				<li><img src="images/img01.jpg" alt="" /></li>
+				<li><img src="images/img02.jpg" alt="" /></li>
+				<li><img src="images/img03.jpg" alt="" /></li>
+				<li><img src="images/img04.jpg" alt="" /></li>
+				<li><img src="images/img05.jpg" alt="" /></li>
+				<li><img src="images/img06.jpg" alt="" /></li>
+				<li><img src="images/img07.jpg" alt="" /></li>
+				<li><img src="images/img08.jpg" alt="" /></li>
+				<li><img src="images/img09.jpg" alt="" /></li>
+				<li><img src="images/img10.jpg" alt="" /></li>
+			</ul>
+		</div>
+		<span class="prev">&lArr;</span>
+		<span class="next">&rArr;</span>
+	</div>
+	<div class="main">
+		<h2>Фейд галереи:</h2>
+		<p>Все фейд галереи по умолчанию бесконечные.</p>
+		<p>JS: <code>$('.fade1').gallery();</code></p>
+		<div class="slide fade1">
+			<div class="hold">
+				<ul>
+					<li><img src="images/img01.jpg" alt="" /></li>
+					<li><img src="images/img02.jpg" alt="" /></li>
+					<li><img src="images/img03.jpg" alt="" /></li>
+					<li><img src="images/img04.jpg" alt="" /></li>
+					<li><img src="images/img05.jpg" alt="" /></li>
+					<li><img src="images/img06.jpg" alt="" /></li>
+					<li><img src="images/img07.jpg" alt="" /></li>
+					<li><img src="images/img08.jpg" alt="" /></li>
+					<li><img src="images/img09.jpg" alt="" /></li>
+					<li><img src="images/img10.jpg" alt="" /></li>
+				</ul>
+			</div>
+			<span class="prev">&lArr;</span>
+			<span class="next">&rArr;</span>
+		</div>
+	</div>
+</body>
+</html>

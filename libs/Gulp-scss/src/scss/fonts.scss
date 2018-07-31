@@ -1,0 +1,43 @@
+$font-path: "../fonts/";
+$font-regular: $font-path + "lato-regular-webfont";
+$font-bold: $font-path + "lato-bold-webfont";
+$font-black: $font-path + "lato-black-webfont";
+
+@font-face {
+	font-family: 'latoregular';
+	src: url( $font-regular + '.eot');
+	src: url( $font-regular + '.eot?#iefix') format('embedded-opentype'),
+		 url( $font-regular + '.woff2') format('woff2'),
+		 url( $font-regular + '.woff') format('woff'),
+		 url( $font-regular + '.ttf') format('truetype'),
+		 url( $font-regular + '.svg#helveticaregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latobold';
+	src: url( $font-bold + '.eot');
+	src: url( $font-bold + '.eot?#iefix') format('embedded-opentype'),
+		 url( $font-bold + '.woff2') format('woff2'),
+		 url( $font-bold + '.woff') format('woff'),
+		 url( $font-bold + '.ttf') format('truetype'),
+		 url( $font-bold + '.svg#helveticaregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latoblack';
+	src: url( $font-black + '.eot');
+	src: url( $font-black + '.eot?#iefix') format('embedded-opentype'),
+		 url( $font-black + '.woff2') format('woff2'),
+		 url( $font-black + '.woff') format('woff'),
+		 url( $font-black + '.ttf') format('truetype'),
+		 url( $font-black + '.svg#helveticaregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$font-family-regular: 'latoregular' , arial, helvetica, sans-serif;
+$font-family-bold: 'latobold' , arial, helvetica, sans-serif;
+$font-family-black: 'latoblack' , arial, helvetica, sans-serif;
+

@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Tabs</title>
+	<link rel="stylesheet" type="text/css" href="css/all.css" />
+	<script type="text/javascript" src="../jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tabs.min.js"></script>
+	<script type="text/javascript" src="js/jquery.main.js"></script>
+</head>
+<body>
+	<div class="main">
+		
+		<h1>JetCoders Tabs + Steps</h1>
+		<h3>Значения по умолчанию:</h3>
+		<table>
+			<tr>
+				<th>Option</th>
+				<th>Description</th>
+				<th>Data Type</th>
+				<th>Default</th>
+			</tr>
+			<tr>
+				<td><code>hiddenClass</code></td>
+				<td>Класс закрытого таба</td>
+				<td>String</td>
+				<td>"hidden"</td>
+			</tr>
+			<tr>
+				<td><code>visibleClass</code></td>
+				<td>Класс открытого таба</td>
+				<td>String</td>
+				<td>"visible"</td>
+			</tr>
+			<tr>
+				<td><code>activeTab</code></td>
+				<td>Класс активной ссылки таба</td>
+				<td>String</td>
+				<td>"active"</td>
+			</tr>
+			<tr>
+				<td><code>disabledTab</code></td>
+				<td>Класс отключенной ссылки таба</td>
+				<td>String</td>
+				<td>"disabled"</td>
+			</tr>
+			<tr>
+				<td><code>steps</code></td>
+				<td>Если нужны степы, указываем блок с ссылками для степов (<a href="#linkStep">Пример</a>)</td>
+				<td>Boolean, String</td>
+				<td>false (отключен)</td>
+			</tr>
+		</table>
+		<h3>Методы:</h3>
+		<table>
+			<tr>
+				<th>Method</th>
+				<th>Description</th>
+				<th>Example</th>
+			</tr>
+			<tr>
+				<td><code>'setTab'</code></td>
+				<td>Установки активного таба</td>
+				<td><code>$('.tabs').tabs('setTab', '#tab01')</code></td>
+			</tr>
+		</table>
+		<br />
+		<h2>Tabs:</h2>
+		<p>Запуск в JS для всех видов табов один: <code>$('.tabs').tabs();</code></p>
+		<p>Если не указать класс <code>active</code> то все табы будут скрыты.</p>
+		<br />
+		<h3>Стандартные табы (с отключенной кнопкой):</h3>
+<pre>
+&lt;div class="wrap tabs">
+	&lt;ul class="list">
+		&lt;li data-tab="#tab01">Tab 1&lt;/li>
+		&lt;li data-tab="#tab02" class="active">Tab 2&lt;/li>
+		&lt;li data-tab="#tab03" class="disabled">Tab 3 (disabled)&lt;/li>
+	&lt;/ul>
+	&lt;div class="tab" id="tab01">
+		&lt;h3>Tab 1&lt;/h3>
+	&lt;/div>
+	&lt;div class="tab" id="tab02">
+		&lt;h3>Tab 2&lt;/h3>
+	&lt;/div>
+	&lt;div class="tab" id="tab03">
+		&lt;h3>Tab 3&lt;/h3>
+	&lt;/div>
+&lt;/div>
+</pre>
+		<p>Пример:</p>
+		<div class="wrap tabs">
+			<ul class="list">
+				<li data-tab="#tab01">Tab 1</li>
+				<li data-tab="#tab02" class="active">Tab 2</li>
+				<li data-tab="#tab03" class="disabled">Tab 3 (disabled)</li>
+				<li data-tab="#tab04">Tab 4</li>
+			</ul>
+			<div class="tab" id="tab01">
+				<h3>Tab 1</h3>
+				<img src="images/img01.jpg" alt="" />
+			</div>
+			<div class="tab" id="tab02">
+				<h3>Tab 2</h3>
+				<img src="images/img02.jpg" alt="" />
+			</div>
+			<div class="tab" id="tab03">
+				<h3>Tab 3</h3>
+				<img src="images/img03.jpg" alt="" />
+			</div>
+			<div class="tab" id="tab04">
+				<h3>Tab 4</h3>
+				<img src="images/img04.jpg" alt="" />
+			</div>
+		</div>
+		<br />
+		<h3>Табы с дублирующими кнопками:</h3>
+<pre>
+&lt;div class="wrap tabs">
+	&lt;ul class="list">
+		&lt;li data-tab="#tab11">Tab 1&lt;/li>
+		&lt;li data-tab="#tab12" class="active">Tab 2&lt;/li>
+	&lt;/ul>
+	&lt;div class="tab" id="tab11">
+		&lt;h3>Tab 1&lt;/h3>
+	&lt;/div>
+	&lt;div class="tab" id="tab12">
+		&lt;h3>Tab 2&lt;/h3>
+	&lt;/div>
+	&lt;ul class="list">
+		&lt;li data-tab="#tab11">Tab 1&lt;/li>
+		&lt;li data-tab="#tab12">Tab 2&lt;/li>
+	&lt;/ul>
+&lt;/div>
+</pre>
+		<p>Пример:</p>
+		<div class="wrap tabs">
+			<ul class="list">
+				<li data-tab="#tab11">Tab 1</li>
+				<li data-tab="#tab12">Tab 2</li>
+				<li data-tab="#tab13" class="active">Tab 3</li>
+			</ul>
+			<div class="tab" id="tab11">
+				<h3>Tab 1</h3>
+				<img src="images/img01.jpg" alt="" />
+			</div>
+			<div class="tab" id="tab12">
+				<h3>Tab 2</h3>
+				<img src="images/img02.jpg" alt="" />
+			</div>
+			<div class="tab" id="tab13">
+				<h3>Tab 3</h3>
+				<img src="images/img03.jpg" alt="" />
+			</div>
+			<ul class="list">
+				<li data-tab="#tab11">Tab 1</li>
+				<li data-tab="#tab12">Tab 2</li>
+				<li data-tab="#tab13">Tab 3</li>
+			</ul>
+		</div>
+		<br />
+		<h3>Табы + ссылки переключения внутри табов:</code></h3>
+<pre>
+&lt;div class="wrap tabs">
+	&lt;ul class="list">
+		&lt;li data-tab="#tab21" class="active">Tab 1&lt;/li>
+		&lt;li data-tab="#tab22">Tab 2&lt;/li>
+	&lt;/ul>
+	&lt;div class="tab" id="tab21">
+		&lt;h3>Tab 1&lt;/h3>
+		&lt;div class="hold-btn">
+			&lt;a data-tab="#tab22" class="btn" href="#">Go to tab 2&lt;/a>
+		&lt;/div>
+	&lt;/div>
+	&lt;div class="tab" id="tab22">
+		&lt;h3>Tab 2&lt;/h3>
+		&lt;div class="hold-btn">
+			&lt;a data-tab="#tab21" class="btn" href="#">Go to tab 1&lt;/a>
+		&lt;/div>
+	&lt;/div>
+&lt;/div>
+</pre>
+		<div class="wrap tabs">
+			<ul class="list">
+				<li data-tab="#tab21" class="active">Tab 1</li>
+				<li data-tab="#tab22">Tab 2</li>
+				<li data-tab="#tab23">Tab 3</li>
+			</ul>
+			<div class="tab" id="tab21">
+				<h3>Tab 1</h3>
+				<div class="hold-btn">
+					<a data-tab="#tab22" class="btn" href="#">Go to tab 2</a>
+				</div>
+				<img src="images/img01.jpg" alt="" />
+			</div>
+			<div class="tab" id="tab22">
+				<h3>Tab 2</h3>
+				<div class="hold-btn">
+					<a data-tab="#tab21" class="btn" href="#">Go to tab 1</a>
+					<a data-tab="#tab23" class="btn" href="#">Go to tab 3</a>
+				</div>
+				<img src="images/img02.jpg" alt="" />
+			</div>
+			<div class="tab" id="tab23">
+				<h3>Tab 3</h3>
+				<div class="hold-btn">
+					<a data-tab="#tab22" class="btn" href="#">Go to tab 2</a>
+				</div>
+				<img src="images/img03.jpg" alt="" />
+			</div>
+		</div>
+		<br />
+		<h2 id="linkStep">Steps:</h2>
+		<p>JS: 
+			<pre>$('.steps').tabs({
+    steps: ".list"
+});</pre>
+		</p>
+<pre>
+&lt;div class="wrap steps">
+	&lt;ul class="list">
+		&lt;li data-tab="#step01" class="active">Step 1&lt;/li>
+		&lt;li data-tab="#step02">Step 2&lt;/li>
+		&lt;li data-tab="#step03">Step 3&lt;/li>
+	&lt;/ul>
+	&lt;div class="tab" id="step01">
+		&lt;h3>Step 1&lt;/h3>
+		&lt;div class="hold-btn">
+			&lt;a data-tab="#step02" class="btn" href="#">Go to step 2&lt;/a>
+		&lt;/div>
+	&lt;/div>
+	&lt;div class="tab" id="step02">
+		&lt;h3>Step 2&lt;/h3>
+		&lt;div class="hold-btn">
+			&lt;a data-tab="#step01" class="btn" href="#">Go to step 1&lt;/a>
+			&lt;a data-tab="#step03" class="btn" href="#">Go to step 3&lt;/a>
+		&lt;/div>
+	&lt;/div>
+	&lt;div class="tab" id="step03">
+		&lt;h3>Step 3&lt;/h3>
+		&lt;div class="hold-btn">
+			&lt;a data-tab="#step02" class="btn" href="#">Go to step 2&lt;/a>
+		&lt;/div>
+	&lt;/div>
+&lt;/div>
+</pre>
+		<div class="wrap steps">
+			<ul class="list">
+				<li data-tab="#step01" class="active">Step 1</li>
+				<li data-tab="#step02">Step 2</li>
+				<li data-tab="#step03">Step 3</li>
+				<li data-tab="#step04">Step 4</li>
+			</ul>
+			<div class="tab" id="step01">
+				<h3>Step 1</h3>
+				<img src="images/img01.jpg" alt="" />
+				<div class="hold-btn">
+					<a data-tab="#step02" class="btn" href="#">Go to step 2</a>
+				</div>
+			</div>
+			<div class="tab" id="step02">
+				<h3>Step 2</h3>
+				<img src="images/img02.jpg" alt="" />
+				<div class="hold-btn">
+					<a data-tab="#step01" class="btn" href="#">Go to step 1</a>
+					<a data-tab="#step03" class="btn" href="#">Go to step 3</a>
+				</div>
+			</div>
+			<div class="tab" id="step03">
+				<h3>Step 3</h3>
+				<img src="images/img03.jpg" alt="" />
+				<div class="hold-btn">
+					<a data-tab="#step02" class="btn" href="#">Go to step 2</a>
+					<a data-tab="#step04" class="btn" href="#">Go to step 4</a>
+				</div>
+			</div>
+			<div class="tab" id="step04">
+				<h3>Step 4</h3>
+				<img src="images/img04.jpg" alt="" />
+				<div class="hold-btn">
+					<a data-tab="#step03" class="btn" href="#">Go to step 3</a>
+				</div>
+			</div>
+		</div>
+		<br />
+	</div>
+</body>
+</html>
